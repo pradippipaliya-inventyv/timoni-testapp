@@ -1,0 +1,31 @@
+values:
+  deploymentName: my-app-deployment-prod
+  serviceName: my-app-service-prod
+  replicas: 1
+  image:
+    repository: docker.io/nginx
+    tag: 1.29.5
+    digest: ""
+    pullPolicy: IfNotPresent
+  service:
+    port: 80
+  env:
+    MY_ENV_VAR: prod-value
+    ANOTHER_VAR: prod-another-value
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    metrics:
+      - type: Resource
+        resource:
+          name: cpu
+          target:
+            type: Utilization
+            averageUtilization: 80
+  virtualService:
+    enabled: true
+    hosts:
+      - "prod-app.example.com"
+    gateways:
+      - "istio-system/prod-gateway"
