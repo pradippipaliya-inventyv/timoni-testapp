@@ -8,7 +8,6 @@ bundle: {
     name:       "default"
     instances: {
         testapp: {
-
             module: {
                 url: "file://../"
             }
