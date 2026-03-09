@@ -3,13 +3,13 @@ runtime: {
     name:       "fleet"
 
     clusters: {
-        "beta-cluster": {
+        "kind-cluster": {
             group:       "kind-cluster"
             kubeContext: "kind-cluster"
         }
 
-        "prod-cluster": {
-            group:       "amd-cluster"
+        "dev-cluster": {
+            group:       "dev-cluster"
             kubeContext: "ab-cluster"
         }
     }

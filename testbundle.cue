@@ -56,7 +56,7 @@ bundle: {
                         gateways: ["istio-system/beta-gateway"]
                     }
                 }
-                if _cluster.group == "amd-cluster" {
+                if _cluster.group == "dev-cluster" {
                     replicas: 3
                     image: tag: "1.29.5"
                     env: {
